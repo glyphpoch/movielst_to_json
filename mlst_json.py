@@ -48,14 +48,14 @@ with open(filename) as mfile:
 
         movid = s_result[chosen].movieID
 
-        the_unt = s_result[0]
-        ia.update(the_unt)
+        movdata = s_result[chosen]
+        ia.update(movdata)
 
-        print("Working on", the_unt['title'])
+        print("Working on", movdata['title'])
 
         # print("{\"title\":\"", the_unt['title'], "\",\"imdb_id\":\"tt", movid, "\",\"poster_url\":\"", the_unt['cover url'],"\"}", sep='')
         try:
-            jsonf.write("{\"title\":\"" + the_unt['title'] + "\",\"imdb_id\":\"tt" + movid + "\",\"poster_url\":\"" + the_unt['cover url'] + "\"}")
+            jsonf.write("{\"title\":\"" + movdata['title'] + "\",\"imdb_id\":\"tt" + movid + "\",\"poster_url\":\"" + movdata['cover url'] + "\"}")
 
             print(lineidx)
             print(lineidx, num_lines)
